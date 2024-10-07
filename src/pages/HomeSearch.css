@@ -3,9 +3,16 @@
     align-items: center;
     background-color: black;
     font-size: 15px;
-    max-width: 175px;
+    width: 200px;
     transition-duration: .2s;
     justify-content: space-between;
+    padding: 0 15px 0 6px;
+    margin: 5px;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
 }
 
 .li-person:hover {
@@ -15,3 +22,13 @@
 .name {
     margin: 14px 6px;
 }
+
+.name > span {
+    padding-left: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .li-person {
+      width: 100%;
+    }
+  }
