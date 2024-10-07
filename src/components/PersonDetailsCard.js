@@ -1,10 +1,11 @@
-import personLogo from '../img/person.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './card.css'
+import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 
  const PersonDetailsCard = ({ person }) => {
     return (
         <div className='card'>
-            <img src={personLogo} alt="head-icon" width="40" />
+            <FontAwesomeIcon icon={faUserAstronaut} />
             <p>Gender: {person.gender}</p>
             <p>Birth year: {person.birth_year}</p>
             <p>Height: {person.height}</p>

@@ -1,11 +1,16 @@
- import { Link } from 'react-router-dom'
-import personLogo from '../img/person.png'
+ import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight, faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
+
  const PersonInList = ({ person }) => {
+    const navigate = useNavigate()
     return (
-        <li>
-            <img src={personLogo} alt="head-icon" width="40" />
-           <span className="name"> {person?.properties?.name} </span>
-           <Link to={`/person/`+ person.uid}>More Details</Link>
+        <li className="li-person" onClick={() => navigate(`/person/`+ person.uid)}>
+            <div className="name">
+                <FontAwesomeIcon icon={faUserAstronaut} size="lg"/>
+                <span> {person?.properties?.name} </span>
+            </div>
+            <FontAwesomeIcon icon={faChevronRight} />
         </li>
     )
 }

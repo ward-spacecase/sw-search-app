@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import PersonInList from "../components/PersonInList"
 import { FetchPeople } from "../data/FetchPeople"
+import "./HomeSearch.css"
 
 const HomeSearch = () => {
     const [name, setName] = useState("")

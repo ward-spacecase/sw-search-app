@@ -1,0 +1,17 @@
+.li-person {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    font-size: 15px;
+    max-width: 175px;
+    transition-duration: .2s;
+    justify-content: space-between;
+}
+
+.li-person:hover {
+    background-color: #222222;
+}
+
+.name {
+    margin: 14px 6px;
+}
