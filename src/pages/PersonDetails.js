@@ -2,12 +2,12 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import {useNavigate } from "react-router-dom"
 import { FetchPersonDetails } from "../data/FetchPersonDetails"
+import { FetchLocationDetails } from "../data/FetchLocationDetails"
 import PersonDetailsCard from "../components/PersonDetailsCard"
 import LocationDetailsCard from "../components/LocationDetailsCard"
-import './PersonDetails.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faCircleNotch } from "@fortawesome/free-solid-svg-icons"
-import { FetchLocationDetails } from "../data/FetchLocationDetails"
+import './PersonDetails.css'
 
 const PersonDetails = () => {
     const { id } = useParams()
@@ -32,7 +32,7 @@ const PersonDetails = () => {
                     <button className="back-button" onClick={() => {navigate(-1)}}><FontAwesomeIcon icon={faChevronLeft} /></button>
                     <h1 className="search-header">{personDetails.properties.name}</h1>
                 </div>
-                <div className="row wrap nocenter">
+                <div className="no-center row wrap">
                     <PersonDetailsCard person={personDetails.properties} />
                     <LocationDetailsCard location={locationDetails?.properties} />
                 </div>

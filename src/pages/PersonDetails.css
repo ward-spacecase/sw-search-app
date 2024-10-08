@@ -6,7 +6,7 @@
 .wrap {
     flex-wrap: wrap;
 }
-.nocenter {
+.no-center {
     align-items: flex-start;
 }
 

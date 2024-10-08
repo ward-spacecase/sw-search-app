@@ -35,11 +35,11 @@ ul {
 .lightsaber-input {
     outline: none;
     background-color: transparent;
-    border: 2px solid #00aaff; /* Neon blue border (lightsaber blade) */
+    border: 2px solid #00aaff;
     color: #00aaff;
     padding: 10px;
     font-size: 1rem;
-    width: 300px; /* Blade length */
+    width: 300px;
     box-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 15px rgba(0, 170, 255, 0.5);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
@@ -63,7 +63,7 @@ ul {
 
 
 .lightsaber-button {
-  background-color: #aaa; /* Hilt color */
+  background-color: #aaa;
   border: 2px solid #000;
   color: #000;
   padding: 10px 20px;
