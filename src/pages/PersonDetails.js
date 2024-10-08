@@ -41,7 +41,7 @@ const PersonDetails = () => {
         (
             <>
             <button className="back-button" onClick={() => {navigate(-1)}}><FontAwesomeIcon icon={faChevronLeft} /></button>
-            <div className="spinner">
+            <div className="spinner" data-testid="spinner">
                 <FontAwesomeIcon className="fa-spin" icon={faCircleNotch} size="4x" />
             </div>
             </>
