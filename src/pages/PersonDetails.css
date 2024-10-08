@@ -2,3 +2,25 @@
     display: flex;
     align-items: center;
 }
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.back-button {
+    margin-right: 16px;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #000;
+}

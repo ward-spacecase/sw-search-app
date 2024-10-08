@@ -32,7 +32,7 @@ const HomeSearch = () => {
 
     return (
     <>
-        <h1 className="searchHeader">Star Wars Search</h1>
+        <h1 className="search-header">Star Wars Search</h1>
         <input className="lightsaber-input" placeholder="Enter a name" onChange={(event) => setName(event.target.value) } value={name} />
         <button className="lightsaber-button" onClick={ onSearchClick }>SCAN</button>
         {!people ? (<div className="spinner"><FontAwesomeIcon className="fa-spin" icon={faCircleNotch} size="4x" /></div>) :
