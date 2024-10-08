@@ -7,14 +7,21 @@ import LocationDetailsCard from "../components/LocationDetailsCard"
 import './PersonDetails.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faCircleNotch } from "@fortawesome/free-solid-svg-icons"
+import { FetchLocationDetails } from "../data/FetchLocationDetails"
 
 const PersonDetails = () => {
     const { id } = useParams()
     const [personDetails, setPersonDetails] = useState(undefined)
+    const [locationDetails, setLocationDetails] = useState(undefined)
     const navigate = useNavigate()
     
     useEffect(() => {
-        FetchPersonDetails(id).then(response => {setPersonDetails(response.result)})
+        FetchPersonDetails(id).then(response => {
+            setPersonDetails(response.result)
+            FetchLocationDetails(response.result.properties.homeworld).then(response => {
+                setLocationDetails(response.result)
+            })
+        })
     }, [id])
 
     return (
@@ -25,9 +32,9 @@ const PersonDetails = () => {
                     <button className="back-button" onClick={() => {navigate(-1)}}><FontAwesomeIcon icon={faChevronLeft} /></button>
                     <h1 className="search-header">{personDetails.properties.name}</h1>
                 </div>
-                <div className="row wrap">
+                <div className="row wrap nocenter">
                     <PersonDetailsCard person={personDetails.properties} />
-                    <LocationDetailsCard />
+                    <LocationDetailsCard location={locationDetails?.properties} />
                 </div>
             </>
         ) : 

@@ -30,3 +30,6 @@
     display: flex;
     justify-content: space-between;
 }
+.spacing-fix {
+    margin-left: 10px;
+}

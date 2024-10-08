@@ -6,6 +6,9 @@
 .wrap {
     flex-wrap: wrap;
 }
+.nocenter {
+    align-items: flex-start;
+}
 
 .back-button {
     margin-right: 16px;
