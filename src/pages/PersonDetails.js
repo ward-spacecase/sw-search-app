@@ -19,7 +19,7 @@ const PersonDetails = () => {
         <button onClick={() => {navigate(-1)}}>back</button>
         {personDetails && (
             <>
-                <h2>{personDetails.properties.name}</h2>
+                <h2 className="searchHeader">{personDetails.properties.name}</h2>
                 <div className="row">
                     <PersonDetailsCard person={personDetails.properties} />
                 </div>

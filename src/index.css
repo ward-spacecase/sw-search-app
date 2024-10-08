@@ -20,3 +20,8 @@ code {
 ul {
   list-style-type: none;
 }
+
+.searchHeader {
+  font-family: 'Orbitron';
+  color: #ffa500;
+}

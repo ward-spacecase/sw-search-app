@@ -3,11 +3,6 @@
     src: local('Orbitron'), url(../fonts/Orbitron-VariableFont_wght.ttf) format('truetype');
   }
 
-.searchHeader {
-    font-family: 'Orbitron';
-    color: #ffa500;
-}
-
 .li-person {
     display: flex;
     align-items: center;
