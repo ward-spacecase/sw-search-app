@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { MemoryRouter, useNavigate, useParams } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import HomeSearch from './HomeSearch';
 import { FetchPeople } from '../data/FetchPeople';
 import '@testing-library/jest-dom/extend-expect';
