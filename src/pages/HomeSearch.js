@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom"
 import PersonInList from "../components/PersonInList"
 import { FetchPeople } from "../data/FetchPeople"
 import "./HomeSearch.css"
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const HomeSearch = () => {
     const [name, setName] = useState("")
@@ -11,7 +13,7 @@ const HomeSearch = () => {
     const { searchName } = useParams()
 
     const fetchNewPeople = (updatedName) => {
-        setPeople([])
+        setPeople(undefined)
         FetchPeople(updatedName).then(response => setPeople(response.result))
     }
 
@@ -33,9 +35,14 @@ const HomeSearch = () => {
         <h1 className="searchHeader">Star Wars Search</h1>
         <input className="lightsaber-input" placeholder="Enter a name" onChange={(event) => setName(event.target.value) } value={name} />
         <button className="lightsaber-button" onClick={ onSearchClick }>SCAN</button>
+        {!people ? (<div className="spinner"><FontAwesomeIcon className="fa-spin" icon={faCircleNotch} size="4x" /></div>) :
+        (
         <ul>
             {people?.map( (person) => <PersonInList person={person} key={person.uid} /> )}
         </ul>
+        )
+        }
+        {people?.length == 0 && (<h3 className="no-results">NO RESULTS</h3>)}
     </>
     )
 }
