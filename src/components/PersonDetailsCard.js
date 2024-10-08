@@ -5,7 +5,7 @@ import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
  const PersonDetailsCard = ({ person }) => {
     return (
         <div className='card'>
-            <div className='card-header'><FontAwesomeIcon icon={faUserAstronaut} className='icon' /><h3>ABOUT</h3></div>
+            <div className='card-header'><FontAwesomeIcon icon={faUserAstronaut} className='icon' size="2x" /><h3>ABOUT</h3></div>
             <p><span>Gender:</span> <span>{person.gender}</span></p>
             <p><span>Birth Year:</span> <span>{person.birth_year}</span></p>
             <p><span>Height:</span> <span>{person.height}</span></p>

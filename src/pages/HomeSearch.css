@@ -8,8 +8,8 @@
     align-items: center;
     background-color: black;
     color: #ffa500;
-    font-size: 15px;
-    width: 200px;
+    font-size: 1.64em;
+    width: 350px;
     transition-duration: .2s;
     justify-content: space-between;
     padding: 0 15px 0 6px;
@@ -25,7 +25,7 @@ ul {
 }
 
 .name {
-    margin: 14px 6px;
+    margin: 24px 6px;
 }
 
 .name > span {
@@ -38,8 +38,8 @@ ul {
     border: 2px solid #00aaff;
     color: #00aaff;
     padding: 10px;
-    font-size: 1rem;
-    width: 300px;
+    font-size: 1.75rem;
+    width: 525px;
     box-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 15px rgba(0, 170, 255, 0.5);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
@@ -51,13 +51,13 @@ ul {
 
 @keyframes pulse-glow {
   0% {
-    box-shadow: -10px 0 15px rgba(0, 170, 255, 0.7), -300px 0 30px rgba(0, 170, 255, 0.5);
+    box-shadow: -10px 0 15px rgba(0, 170, 255, 0.7), -525px 0 30px rgba(0, 170, 255, 0.5);
   }
   50% {
     box-shadow: 10px 0 15px rgba(0, 170, 255, 0.7), 0 0 30px rgba(0, 170, 255, 0.5);
   }
   100% {
-    box-shadow: -10px 0 15px rgba(0, 170, 255, 0.7), -300px 0 30px rgba(0, 170, 255, 0.5);
+    box-shadow: -10px 0 15px rgba(0, 170, 255, 0.7), -525px 0 30px rgba(0, 170, 255, 0.5);
   }
 }
 
@@ -67,7 +67,7 @@ ul {
   border: 2px solid #000;
   color: #000;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.75rem;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);

@@ -5,7 +5,7 @@ import { faCircleNotch, faEarth } from '@fortawesome/free-solid-svg-icons'
  const LocationDetailsCard = ({ location }) => {
     return (
         <div className='card'>
-            <div className='card-header'><FontAwesomeIcon className='icon' icon={faEarth} /><h3>HOMEWORLD</h3></div>
+            <div className='card-header'><FontAwesomeIcon className='icon' icon={faEarth} size="2x" /><h3>HOMEWORLD</h3></div>
             {location ? (<>
                 <p><span>Name:</span> <span>{location.name}</span></p>
                 <p><span>Terrain:</span> <span className="spacing-fix">{location.terrain}</span></p>
