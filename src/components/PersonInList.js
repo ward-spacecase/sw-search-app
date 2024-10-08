@@ -5,7 +5,7 @@ import { faChevronRight, faUserAstronaut } from '@fortawesome/free-solid-svg-ico
  const PersonInList = ({ person }) => {
     const navigate = useNavigate()
     return (
-        <li className="li-person" onClick={() => navigate(`/person/`+ person.uid)}>
+        <li className="li-person glow" onClick={() => navigate(`/person/`+ person.uid)}>
             <div className="name">
                 <FontAwesomeIcon icon={faUserAstronaut} size="lg"/>
                 <span> {person?.properties?.name} </span>

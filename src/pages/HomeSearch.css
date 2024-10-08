@@ -1,7 +1,18 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: local('Orbitron'), url(../fonts/Orbitron-VariableFont_wght.ttf) format('truetype');
+  }
+
+.searchHeader {
+    font-family: 'Orbitron';
+    color: #ffa500;
+}
+
 .li-person {
     display: flex;
     align-items: center;
     background-color: black;
+    color: #ffa500;
     font-size: 15px;
     width: 200px;
     transition-duration: .2s;
@@ -9,14 +20,13 @@
     padding: 0 15px 0 6px;
     margin: 5px;
 }
+.li-person:hover {
+    background-color: #222222;
+}
 ul {
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
-}
-
-.li-person:hover {
-    background-color: #222222;
 }
 
 .name {
@@ -26,6 +36,54 @@ ul {
 .name > span {
     padding-left: 10px;
 }
+
+.lightsaber-input {
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #00aaff; /* Neon blue border (lightsaber blade) */
+    color: #00aaff;
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px; /* Blade length */
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 15px rgba(0, 170, 255, 0.5);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  .lightsaber-input:focus {
+    outline: none;
+    animation: pulse-glow 2s linear infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: -10px 0 15px rgba(0, 170, 255, 0.7), -300px 0 30px rgba(0, 170, 255, 0.5);
+    }
+    50% {
+      box-shadow: 10px 0 15px rgba(0, 170, 255, 0.7), 0 0 30px rgba(0, 170, 255, 0.5);
+    }
+    100% {
+      box-shadow: -10px 0 15px rgba(0, 170, 255, 0.7), -300px 0 30px rgba(0, 170, 255, 0.5);
+    }
+  }
+  
+
+  .lightsaber-button {
+    background-color: #aaa; /* Hilt color */
+    border: 2px solid #000;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Orbitron';
+    font-weight: 600;
+  }
+  
+  .lightsaber-button:hover {
+    background-color: #777;
+  }
 
 @media only screen and (max-width: 500px) {
     .li-person {

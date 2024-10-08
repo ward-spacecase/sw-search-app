@@ -16,7 +16,9 @@ const HomeSearch = () => {
     }
 
     const onSearchClick = () => {
-        navigate(`/search/${name}`)
+        if(name) {
+            navigate(`/search/${name}`)
+        }
     }
 
     useEffect(() => {
@@ -28,9 +30,9 @@ const HomeSearch = () => {
 
     return (
     <>
-        <h1>Star Wars Search</h1>
-        <input placeholder="Enter a name" onChange={(event) => setName(event.target.value) } value={name} />
-        <button onClick={ onSearchClick }>Search the Galaxy</button>
+        <h1 className="searchHeader">Star Wars Search</h1>
+        <input className="lightsaber-input" placeholder="Enter a name" onChange={(event) => setName(event.target.value) } value={name} />
+        <button className="lightsaber-button" onClick={ onSearchClick }>SCAN</button>
         <ul>
             {people?.map( (person) => <PersonInList person={person} key={person.uid} /> )}
         </ul>
