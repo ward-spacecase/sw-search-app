@@ -18,12 +18,11 @@ const HomeSearch = () => {
     const fetchNewPeople = (updatedName) => {
         setPeople(undefined)
         setSearched(false)
-        FetchPeople(updatedName).then(response => {
+        return FetchPeople(updatedName).then(response => {
             setPeople(response.result)
             setSearched(true)
         })
     }
-
     const onSearchClick = () => {
         if(name) {
             navigate(`/search/${name}`)

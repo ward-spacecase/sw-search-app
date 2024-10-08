@@ -1,3 +1,4 @@
+// lowercase api functions
 export const FetchPeople = async (name) => {
     try {
         const url = `https://www.swapi.tech/api/people/?name=${name}`

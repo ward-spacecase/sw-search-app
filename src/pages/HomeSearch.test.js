@@ -1,20 +1,21 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { MemoryRouter, useNavigate } from 'react-router-dom';
+import { MemoryRouter, useNavigate, useParams } from 'react-router-dom';
 import HomeSearch from './HomeSearch';
 import { FetchPeople } from '../data/FetchPeople';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 // Mocking the dependencies
 jest.mock('../data/FetchPeople');
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn(),
-  useParams: () => ({ searchName: '' }) // Mock the URL parameter
+  useParams: jest.fn() // Mock the URL parameter
 }));
 
 // Mocking the PersonInList component
-jest.mock('../components/PersonInList', () => ({ person }) => <li>{person.name}</li>);
+jest.mock('../components/PersonInList', () => ({ person }) => <li>{person.properties.name}</li>);
 
 describe('HomeSearch Component', () => {
   const mockedNavigate = jest.fn();
@@ -22,6 +23,7 @@ describe('HomeSearch Component', () => {
   beforeEach(() => {
     // Resetting the mock for each test
     require('react-router-dom').useNavigate.mockReturnValue(mockedNavigate);
+    require('react-router-dom').useParams.mockReturnValue({searchName: ''});
   });
 
   afterEach(() => {
@@ -59,10 +61,12 @@ describe('HomeSearch Component', () => {
     expect(screen.getByTestId('spinner')).toBeInTheDocument();
   });
 
-  test.skip('renders people list after search', async () => {
+  test('renders people list after search', async () => {
+    require('react-router-dom').useParams.mockReturnValue({searchName: 'Luke'});
+
     // Mock FetchPeople to return a list of people
-    FetchPeople.mockResolvedValueOnce({
-      result: [{ uid: '1', name: 'Luke Skywalker' }, { uid: '2', name: 'Leia Organa' }]
+    FetchPeople.mockResolvedValue({
+      result: [{ uid: '1', properties: {name: 'Luke Skywalker'} }, { uid: '2', properties: { name: 'Leia Organa' } }]
     });
 
     render(
@@ -73,7 +77,7 @@ describe('HomeSearch Component', () => {
 
     // Simulate user typing a name and clicking the search button
     fireEvent.change(screen.getByPlaceholderText('Enter a name'), { target: { value: 'Luke' } });
-    fireEvent.click(screen.getByText('SCAN'));
+    userEvent.click(screen.getByText('SCAN'));
 
     // Wait for the people list to be rendered
     await waitFor(() => {
